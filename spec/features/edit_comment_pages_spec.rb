@@ -14,7 +14,7 @@ describe "the edit a comment process" do
     fill_in 'Body', :with => "my body"
     click_on 'Create Post'
     click_on 'Add comment'
-    fill_in 'Content', :with => "a comment"
+    fill_in "comment[content]", :with => "a comment"
     click_on 'Create Comment'
     click_link 'a comment'
     click_link 'Edit Comment'
@@ -35,7 +35,7 @@ describe "the edit a comment process" do
     click_on 'Add comment'
     fill_in 'Content', :with => "a comment"
     click_on 'Create Comment'
-    click_on 'a comment'
+    click_link 'a comment'
     click_link 'Edit Comment'
     fill_in "comment[content]", :with => ''
     click_on 'Update Comment'

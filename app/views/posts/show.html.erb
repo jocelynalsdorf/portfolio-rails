@@ -9,15 +9,17 @@
 	<p class="post-username">By: <%= @post.user.name %></p>
 
 <% if current_user && current_user.admin? %>
-	<p><%= link_to "Edit", edit_post_path(@post) %></p>
-	<p><%= link_to "Delete Post", post_path(@post),
+<div class="admin-btns well">
+	<p class="post-btn-edit"><%= link_to "Edit", edit_post_path(@post) %></p>
+	<p class="post-btn-delete"><%= link_to "Delete Post", post_path(@post),
                           :data => {:confirm => "Confirm?",
                           :method => "delete"} %></p>
+ </div>                         
 <% end %>
 
 <div class="comments" id="comment-div">
 	
-	<ul class="comment-list-div" id="comment-table_<%= @post.id %>">
+	<ul class="comment-list-div well" id="comment-table_<%= @post.id %>">
     <%= render :partial => "comments/comment", :collection => @post.comments %>
   </ul>
 
