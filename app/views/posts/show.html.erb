@@ -1,12 +1,12 @@
 <% content_for :title, "Joss Monster | Post Page" %>
 
 <div class="row">
-	<div class="col-lg-12">
+	<div class="col-lg-12 post-content">
 
-	<h3><%= @post.title %></h3>
+	<h3 class="post-title"><%= @post.title %></h3>
 	<img class="responsive center-block" src="http://placehold.it/400x400" alt="post-picture">
-	<p><%= @post.body %></p>
-	<p>By: <%= @post.user.name %></p>
+	<p class="post-body"><%= @post.body %></p>
+	<p class="post-username">By: <%= @post.user.name %></p>
 
 <% if current_user && current_user.admin? %>
 	<p><%= link_to "Edit", edit_post_path(@post) %></p>
@@ -15,7 +15,7 @@
                           :method => "delete"} %></p>
 <% end %>
 
-<div class="comments">
+<div class="comments" id="comment-div">
 	
 
 <h4 class="comment-count"><%= pluralize(@post.comments.count, "Comment") %></h4>
