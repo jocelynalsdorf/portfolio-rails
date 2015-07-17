@@ -17,8 +17,13 @@
 
 <div class="comments" id="comment-div">
 	
+	<ul class="comment-list-div" id="comment-table_<%= @post.id %>">
+    <%= render :partial => "comments/comment", :collection => @post.comments %>
+  </ul>
+
 
 <h4 class="comment-count"><%= pluralize(@post.comments.count, "Comment") %></h4>
+
 				<% @comments.each do |comment| %>
 				<p class="comment-name"><%= comment.user.name %></p>
 				<p><%= link_to comment.content, post_comment_path(@post, comment) %></p>
@@ -27,10 +32,10 @@
 </div>
 
 
+<p class="btn btn-default"><%= link_to 'Add comment', new_post_comment_path(@post), class: "new_comment_link", id: "new_comment_link", remote: true %></p>
+
 <p><%= link_to "All Posts", posts_path %></p>
 <p><%= link_to "Home", skills_path %></p>
 	</div><!-- end of col-12 -->
 </div><!-- end or row 1 -->
 
-
-<p class="btn btn-default"><%= link_to 'Add comment', new_post_comment_path(@post), class: "new_comment_link", id: "new_comment_link", remote: true %></p>

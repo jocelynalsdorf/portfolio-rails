@@ -11,6 +11,11 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 	end
 
+	def new
+		@post = Post.find(params[:post_id])
+    @comment = @post.comments.new
+
+	end
 
 	def create
 		@post = Post.find(params[:post_id])
@@ -19,7 +24,7 @@ class CommentsController < ApplicationController
 		@comment.post_id = @post.id
 		if @comment.save
 			respond_to do |format|
-	      format.html {  redirect_to post_path(@post))}
+	      format.html {  redirect_to post_path(@post)}
 	      format.js
 	    end
 	  else
