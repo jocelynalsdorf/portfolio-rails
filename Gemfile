@@ -32,6 +32,8 @@ group :test do
   gem 'capybara'
   gem "factory_girl_rails", "~> 4.0"
   gem 'simplecov', require: false
+  gem 'database_cleaner'
+  gem 'poltergeist'
 end
 
 ruby "2.2.0"
