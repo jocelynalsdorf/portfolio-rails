@@ -18,6 +18,7 @@
 <p>Postgres/psql</p>
 <p>capybara</p>
 <p>rspec</p>
+<p>phantom js </p>
 
 
 
@@ -67,7 +68,7 @@
 <h3>How to run the test suite</h3>
 <p>rails generate rspec:install</p>
 <p>'rspec'</p>
-<p>In rails_helper: require 'spec_helper', require 'rspec/rails', require 'capybara/rails'</p>
+<p>In rails_helper: require 'spec_helper', require 'rspec/rails', require 'capybara/rails'; include database_cleaner</p>
 
 
 
