@@ -1,8 +1,4 @@
 
-<div class="container comment-form-div">
-<h3>Leave a Comment</h3>
-
-
 <%= form_for [@post, @post.comments.build], remote: true do |f| %>
 	<%= f.label :content %>
   <%= f.text_field :content %>
@@ -10,5 +6,5 @@
 <% end %>
 
 
-</div>
+
 
