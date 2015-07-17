@@ -1,4 +1,6 @@
 
 $("#new_comment").remove();
 $("#new_comment_link").show();
-$("#comment-table_<%= @post.id %> ").append('<li><%= @comment.content %></li>');
+$("#comment-table_<%= @post.id %> ").append('<li><p><%= link_to @comment.content, post_comment_path(@post, @comment) %></p></li>');
+
+
