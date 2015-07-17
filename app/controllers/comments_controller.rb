@@ -18,10 +18,15 @@ class CommentsController < ApplicationController
 		@comment.user_id = current_user.id
 		@comment.post_id = @post.id
 		if @comment.save
-			redirect_to post_path(@post)
-		else
-			render :error
-		end
+			respond_to do |format|
+	      format.html {  redirect_to post_path(@post))}
+	      format.js
+	    end
+	  else
+	    respond_to do |format|
+        format.js { render 'fail' }
+      end
+	  end
 	end
 
 	def update

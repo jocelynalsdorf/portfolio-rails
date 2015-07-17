@@ -1,9 +1,9 @@
-<%= render "layouts/errors", :object => @post %>
+<%= render "layouts/errors", :object => @comment %>
 <div class="container comment-form-div">
 <h3>Leave a Comment</h3>
 
 
-<%= form_for [@post, @post.comments.build] do |f| %>
+<%= form_for [@post, @post.comments.build], remote: true do |f| %>
 	<%= f.label :content %>
   <%= f.text_field :content %>
   <%= f.submit %>

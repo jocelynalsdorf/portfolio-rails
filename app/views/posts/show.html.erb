@@ -23,9 +23,7 @@
 				<p class="comment-name"><%= comment.user.name %></p>
 				<p><%= link_to comment.content, post_comment_path(@post, comment) %></p>
 				<% end %>
-				<% if user_signed_in? %>
-				<%= render 'comments/form' %>
-				<% end %>
+				
 </div>
 
 
@@ -33,3 +31,6 @@
 <p><%= link_to "Home", skills_path %></p>
 	</div><!-- end of col-12 -->
 </div><!-- end or row 1 -->
+
+
+<p class="btn btn-default"><%= link_to 'Add comment', new_post_comment_path(@post), class: "new_comment_link", id: "new_comment_link", remote: true %></p>
