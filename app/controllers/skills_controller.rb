@@ -12,6 +12,10 @@ class SkillsController < ApplicationController
   def new
     @skill = Skill.new
   end
+  
+  def reference
+    @skills = Skill.all
+  end
 
   def create
     @skill = Skill.new(skill_params)
@@ -44,6 +48,7 @@ class SkillsController < ApplicationController
   
   def all 
     @skills = Skill.all
+
    end 
 
   private

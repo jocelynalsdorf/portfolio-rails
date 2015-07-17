@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :skills do
   	collection do 
   		get 'all'
+      get 'reference'
   	end
     resources :projects, :except => [:index]
   end  

@@ -144,3 +144,14 @@ ul.nav.navbar-nav.navbar-right a {
 .all-skills-div {
 	margin-bottom: 30px;
 }
+
+/*------------ hidden div ---------------------*/
+
+.hidden {
+	display: none;
+}
+.large {
+	height:300px;
+	width: 100%;
+	z-index: 10;
+}

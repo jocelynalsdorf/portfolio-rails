@@ -18,12 +18,17 @@
 	     <div class="col-md-3 skill-display"><img class="responsive center-block" src="http://placehold.it/200x200" alt="skill-picture"><%= link_to skill.name, skill_path(skill) %></div>
 	  <% end %>
 
+		<div class="hidden large">
+			<%= render 'reference' %>
+		</div><!-- end hidden div -->
+
 	 <% if current_user && current_user.admin? %>
 			<button class="links left-link"><%= link_to "Add a Skill", new_skill_path %></button>
 		<% end %>
 
 		<button class="links middle-link"><%= link_to "Blog", posts_path %></button>
 		<button class="links right-link" id="all-skills"><%= link_to "All Skills", all_skills_path %></button>
+		<button class="links all-link"><%= link_to "References", reference_skills_path, id: "reference_link", remote: true %></button>
 		</div><!-- end of 2nd col 12 -->
 	</div><!-- end of row 2 -->
 </div><!-- end of main container -->
